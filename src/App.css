@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.superhero-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+}
+
+.superhero-card{
+  margin: 10px;
+  padding: 5px;
+  background-color: #61dafb;
+}
+
+img{
+  height: 300px;
+  width: auto;
+}
