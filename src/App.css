@@ -1,56 +1,186 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+/* App Container */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  background-color: #f0f0f0;
+  padding: 20px;
+  font-family: 'Comic Neue', sans-serif;
+  min-height: 100vh;
+  /* Comic-inspired font */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.superhero-list{
+/* Superhero List Container */
+.superhero-list {
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center; 
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.superhero-card{
-  margin: 10px;
-  padding: 5px;
-  background-color: #61dafb;
+/* Superhero Card */
+.superhero-card {
+  width: 300px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 img{
-  height: 300px;
   width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.superhero-card:hover {
+  transform: translateY(-5px);
+}
+
+.superhero-card p,
+.superhero-card h3 {
+  text-align: center;
+}
+
+.superhero-card p {
+  margin: 10px 0;
+}
+
+.superhero-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Unique Comic-inspired Styling */
+.superhero-card {
+  border: 2px solid #e60000;
+}
+
+.superhero-card h3 {
+  font-size: 1.5rem;
+  color: #e60000;
+}
+
+.superhero-card p {
+  color: #444;
+}
+
+.superhero-card p:first-child {
+  font-style: italic;
+  color: #666;
+}
+
+/* Optional: Comic-style background */
+.App {
+  /* image with dark overlay */
+  background-image: url('https://images.unsplash.com/photo-1618058368547-e10c14427722?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-blend-mode: multiply;
+
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+/* h1 Styling */
+h1 {
+  font-size: 3rem;
+  color: #ff6600;
+  /* Orange color for superhero vibe */
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Adds a shadow effect */
+  letter-spacing: 2px;
+  /* Increases letter spacing for emphasis */
+  font-family: 'Comic Neue', cursive;
+  /* Comic-inspired font */
+}
+
+.dark{
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Toggle Button Style */
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+  border: 2px solid #333;
+  /* Dark border for the button */
+  border-radius: 20px;
+  /* Rounded corners */
+  padding: 10px 20px;
+  /* Padding for the button text */
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  /* Dark text color */
+  cursor: pointer;
+  z-index: 9999;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #333;
+  /* Dark background color on hover */
+  color: #fff;
+  /* Light text color on hover */
+}
+
+
+/* Counter Container */
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+/* Counter Value */
+.counter h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* Counter Buttons */
+.counter button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover State */
+.counter button:hover {
+  background-color: #0056b3;
+}
+
+/* Button Active State */
+.counter button:active {
+  transform: scale(0.95);
+  /* Adds a slight scaling effect when button is clicked */
 }
