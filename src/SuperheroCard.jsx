@@ -2,8 +2,9 @@ function SuperheroCard({ superhero, isDarkMode }) {
   // console.log(props);
   console.log(isDarkMode);
   return (
-    <div className={isDarkMode ? "superhero-card dark" : "superhero-card"}>
+    <div className="superhero-card">
       {/* <p>{jerry}</p> */}
+      <img src={superhero.image} />
       <h3>{superhero.name}</h3>
       <p
         style={{
@@ -12,7 +13,7 @@ function SuperheroCard({ superhero, isDarkMode }) {
       >
         {superhero.group}
       </p>
-      <img src={superhero.image} />
+      <button>Add to Team</button>
     </div>
   );
 }

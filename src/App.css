@@ -1,6 +1,9 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
-
+.selected {
+  background : #ff8636 !important; 
+  color: #fff;
+}
 /* App Container */
 .App {
   display: flex;
@@ -27,20 +30,56 @@
 /* Superhero Card */
 .superhero-card {
   width: 300px;
-  height: 500px;
-  background-color: #fff;
+  height: 600px;
+  /* gradient smooth background color */
+  /* background: linear-gradient(45deg, #562200, #db5f00); */
+  /* background: linear-gradient(135deg, #ff6347, #4169e1, #ffd700); */
+      /* background: linear-gradient(135deg, #ff0000, #0000ff); */
+          /* background: linear-gradient(135deg, #ff0000, #ffd700); */
+              /* background: linear-gradient(135deg, #ff0000, #ffffff, #0000ff); */
+    /* background: linear-gradient(135deg, #000000, #0000ff); */
+  background: linear-gradient(135deg, #ff0000, #000000);
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
+  /* Adds a smooth transition effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
-img{
+.superhero-card h3 {
+  margin: 10px 0;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.superhero-card button{
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #ff7a22;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.superhero-card button:hover {
+  background-color: #ff3300;
+}
+
+/* img{
   width: auto;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
   object-position: center;
-}
+} */
 
 .superhero-card:hover {
   transform: translateY(-5px);
@@ -58,9 +97,11 @@ img{
 .superhero-card img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 400px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  object-fit:contain;
+  object-position: center;
 }
 
 /* Unique Comic-inspired Styling */
@@ -74,7 +115,7 @@ img{
 }
 
 .superhero-card p {
-  color: #444;
+  color : #e66400;
 }
 
 .superhero-card p:first-child {
@@ -85,7 +126,9 @@ img{
 /* Optional: Comic-style background */
 .App {
   /* image with dark overlay */
-  background-image: url('https://images.unsplash.com/photo-1618058368547-e10c14427722?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  /* background-image: url('https://images.unsplash.com/photo-1618058368547-e10c14427722?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1618058368547-e10c14427722?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-blend-mode: multiply;
 
   background-size: cover;
@@ -184,3 +227,4 @@ h1 {
   transform: scale(0.95);
   /* Adds a slight scaling effect when button is clicked */
 }
+

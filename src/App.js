@@ -42,6 +42,11 @@ function App() {
       </button>
 
       <h1 className="heading">SuperUniverse: Assemble & Conquer</h1>
+
+      {/* <div className="my-team">
+        <h2>My team:</h2>
+      </div> */}
+
       <SuperheroList isDarkMode={isDarkMode} superheroes={superheroes} />
     </div>
   );
