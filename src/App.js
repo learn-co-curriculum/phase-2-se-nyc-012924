@@ -9,6 +9,9 @@ function App() {
   const [count, setCount] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const [selectedSuperheroes, setSelectedSuperheroes] = useState([]);
+
+  // const selectedSuperheroes = ["Spiderman", "Ironman"];
   // let count = 10;
 
   function handleClick() {
@@ -28,6 +31,7 @@ function App() {
 
   function handleToggleTheme() {
     setIsDarkMode(!isDarkMode);
+    // setSelectedSuperheroes([...selectedSuperheroes, "Ironman"]);
   }
 
   return (
@@ -43,11 +47,19 @@ function App() {
 
       <h1 className="heading">SuperUniverse: Assemble & Conquer</h1>
 
-      {/* <div className="my-team">
+      <div className="my-team">
         <h2>My team:</h2>
-      </div> */}
+        {selectedSuperheroes.map((superhero) => (
+          <p>{superhero}</p>
+        ))}
+      </div>
 
-      <SuperheroList isDarkMode={isDarkMode} superheroes={superheroes} />
+      <SuperheroList
+        onSuperHeroSelect={setSelectedSuperheroes}
+        selectedSuperheroes={selectedSuperheroes}
+        isDarkMode={isDarkMode}
+        superheroes={superheroes}
+      />
     </div>
   );
 }
