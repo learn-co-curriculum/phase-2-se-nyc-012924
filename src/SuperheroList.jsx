@@ -3,7 +3,6 @@ import SuperheroCard from "./SuperheroCard";
 
 function SuperheroList({
   superheroes,
-  isDarkMode,
   onSuperHeroSelect,
   selectedSuperheroes,
 }) {
@@ -12,7 +11,6 @@ function SuperheroList({
       {superheroes.map((superhero, index) => {
         return (
           <SuperheroCard
-            isDarkMode={isDarkMode}
             key={index}
             superhero={superhero}
             onSuperHeroSelect={onSuperHeroSelect}
