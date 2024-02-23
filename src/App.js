@@ -2,12 +2,16 @@ import "./App.css";
 import superheroes from "./superhero";
 import SuperheroList from "./SuperheroList";
 import NewSuperHero from "./NewSuperHero";
+import MyTeam from "./MyTeam";
+import Search from "./Search";
 import React, { useState } from "react";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const [selectedSuperheroes, setSelectedSuperheroes] = useState([]);
+
+  const [superheroList, setSuperheroList] = useState(superheroes);
 
   function handleToggleTheme() {
     setIsDarkMode(!isDarkMode);
@@ -20,25 +24,20 @@ function App() {
       </button>
 
       <h1 className="heading">SuperUniverse: Assemble & Conquer</h1>
-      {/* {
-      Excercise:
-      Refractor this to a component called MyTeam 
-      -> pass the selectedSuperheroes as a prop
-      } */}
-      <div className="my-team">
-        <h2>My team:</h2>
-        {selectedSuperheroes.map((superhero) => (
-          <p>{superhero}</p>
-        ))}
-      </div>
+
+      <Search />
 
       <SuperheroList
         onSuperHeroSelect={setSelectedSuperheroes}
         selectedSuperheroes={selectedSuperheroes}
-        superheroes={superheroes}
+        superheroes={superheroList}
       />
 
-      <NewSuperHero />
+      <MyTeam selectedSuperheroes={selectedSuperheroes} />
+      <NewSuperHero
+        superheroList={superheroList}
+        setSuperheroList={setSuperheroList}
+      />
     </div>
   );
 }
