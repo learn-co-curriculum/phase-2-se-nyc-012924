@@ -12,15 +12,16 @@ function NewSuperHero({ superheroList, setSuperheroList }) {
     console.log("Form submitted!");
     let newSuperhero = { name, group, image };
     console.log(newSuperhero);
-
-    if (name.length >= 3 && group.length >= 2) {
-      setSuperheroList([...superheroList, newSuperhero]);
-      setError("");
-    } else {
-      setError(
-        "Name must be 3 characters and group must be at least 2 characters"
-      );
-    }
+    // setSuperheroList([...superheroList, newSuperhero]);
+    fetch("http://localhost:4000/superheroes", {
+      method: "POST",
+      headers: {
+        "content-type": "Application/json",
+      },
+      body: JSON.stringify(newSuperhero),
+    })
+      .then((res) => res.json())
+      .then((data) => setSuperheroList([...superheroList, data]));
   }
 
   function handleName(e) {
@@ -58,8 +59,6 @@ function NewSuperHero({ superheroList, setSuperheroList }) {
         />
         <input type="submit" value="Add Superhero" />
       </form>
-
-      <p>{error}</p>
     </div>
   );
 }

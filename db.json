@@ -48,6 +48,13 @@
       "image": "https://assetsio.reedpopcdn.com/spider-man_dn7Jqot.jpg?width=1200&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
       "group": "Marvel",
       "description": "Spiderman is a fictional superhero in the Marvel Universe. Grew up in Queens, New York. He is a high school student and a photographer. He has the ability to shoot webs and climb walls. He is also known as Peter Parker."
+    },
+    {
+      "name": "Deadpool",
+      "group": "Marvel",
+      "description": "A marvel superhero",
+      "image": "https://www.usatoday.com/gcdn/-mm-/ef3587f4d44b8d4b28352d96d112d0847c8ec8f0/c=751-0-2249-1997/local/-/media/2016/02/11/USATODAY/USATODAY/635908058668140572-AP-FILM-REVIEW-DEADPOOL-79512492.JPG",
+      "id": 16
     }
   ]
 }

@@ -6,7 +6,7 @@ function MyTeam({ selectedSuperheroes }) {
       <h2>My team:</h2>
       <div className="my-team">
         {selectedSuperheroes.map((superhero) => (
-          <p>{superhero}</p>
+          <p key={superhero.name}>{superhero}</p>
         ))}
       </div>
     </div>
